@@ -5,10 +5,10 @@ import wolszon.me.shopifydeveloperchallenge.base.Schedulers
 
 class AndroidSchedulers : Schedulers {
     override fun mainThread(): Scheduler {
-        return io.reactivex.schedulers.Schedulers.io()
+        return io.reactivex.android.schedulers.AndroidSchedulers.mainThread()
     }
 
     override fun backgroundThread(): Scheduler {
-        return io.reactivex.android.schedulers.AndroidSchedulers.mainThread()
+        return io.reactivex.schedulers.Schedulers.io()
     }
 }

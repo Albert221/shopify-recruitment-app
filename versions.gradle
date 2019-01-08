@@ -10,6 +10,8 @@ ext {
             javaxAnnotations: '10.0-b28',
             rxandroid       : '2.1.0',
             rxjava          : '2.2.5',
-            retrofit        : '2.5.0'
+            retrofit        : '2.5.0',
+            moshiKotlin     : '1.8.0',
+            okHttpLogger    : '3.10.0'
     ]
 }

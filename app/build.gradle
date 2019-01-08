@@ -7,6 +7,10 @@ kapt {
     generateStubs = true
 }
 
+androidExtensions {
+    experimental = true
+}
+
 android {
     compileSdkVersion 28
 
@@ -53,7 +57,9 @@ dependencies {
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okHttpLogger"
     implementation "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+    implementation "com.squareup.moshi:moshi-kotlin:$versions.moshiKotlin"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
 
     testImplementation 'junit:junit:4.12'
