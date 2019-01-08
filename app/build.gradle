@@ -62,6 +62,8 @@ dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:$versions.moshiKotlin"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
 
+    implementation "com.squareup.picasso:picasso:$versions.picasso"
+
     testImplementation 'junit:junit:4.12'
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

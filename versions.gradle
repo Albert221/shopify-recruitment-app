@@ -12,6 +12,8 @@ ext {
             rxjava          : '2.2.5',
             retrofit        : '2.5.0',
             moshiKotlin     : '1.8.0',
-            okHttpLogger    : '3.10.0'
+            okHttpLogger    : '3.10.0',
+
+            picasso         : '2.71828'
     ]
 }
