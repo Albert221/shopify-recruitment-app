@@ -14,13 +14,14 @@ import kotlin.math.roundToInt
 class CollectionsActivity : BaseActivity(), CollectionsView {
     @Inject
     lateinit var presenter: CollectionsPresenter
-
     @Inject
     lateinit var collectionsAdapter: CollectionsListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collections)
+
+        collectionsAdapter.onItemClick = presenter::openCollection
 
         collectionsList.apply {
             prepare()

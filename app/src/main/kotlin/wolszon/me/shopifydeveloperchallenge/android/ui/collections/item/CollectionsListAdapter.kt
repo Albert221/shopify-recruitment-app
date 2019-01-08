@@ -8,7 +8,8 @@ import wolszon.me.shopifydeveloperchallenge.api.model.Collection
 import javax.inject.Inject
 
 class CollectionsListAdapter @Inject constructor() : RecyclerView.Adapter<CollectionItemViewHolder>() {
-    var collections = listOf<Collection>()
+    private var collections = listOf<Collection>()
+    var onItemClick: ((Collection) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CollectionItemViewHolder {
         return CollectionItemViewHolder(parent.inflate(R.layout.collection_list_item))
@@ -18,7 +19,10 @@ class CollectionsListAdapter @Inject constructor() : RecyclerView.Adapter<Collec
 
     override fun onBindViewHolder(holder: CollectionItemViewHolder, position: Int) {
         holder.apply {
-            bindView(collections[position])
+            bindView(collections[position]) {
+                if (onItemClick != null)
+                    onItemClick!!(collections[position])
+            }
         }
     }
 
