@@ -10,6 +10,6 @@
         android:id="@+id/collectionsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/collection_list_item" />
+        tools:listitem="@layout/collections_list_item" />
 
 </android.support.constraint.ConstraintLayout>

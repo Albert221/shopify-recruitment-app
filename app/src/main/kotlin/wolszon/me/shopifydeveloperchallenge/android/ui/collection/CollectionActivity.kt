@@ -9,13 +9,19 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_collection.*
 import wolszon.me.shopifydeveloperchallenge.R
 import wolszon.me.shopifydeveloperchallenge.android.base.BaseActivity
+import wolszon.me.shopifydeveloperchallenge.android.ui.collection.productslist.ProductsListAdapter
 import wolszon.me.shopifydeveloperchallenge.android.utils.isVisible
+import wolszon.me.shopifydeveloperchallenge.android.utils.prepare
 import wolszon.me.shopifydeveloperchallenge.api.model.Collection
+import wolszon.me.shopifydeveloperchallenge.api.model.Product
 import javax.inject.Inject
 
 class CollectionActivity : BaseActivity(), CollectionView {
     @Inject
     lateinit var presenter: CollectionPresenter
+    @Inject
+    lateinit var productsListAdapter: ProductsListAdapter
+
     lateinit var collection: Collection
 
     companion object {
@@ -46,8 +52,13 @@ class CollectionActivity : BaseActivity(), CollectionView {
             collectionBody.text = collection.body
         }
 
+        productsList.apply {
+            prepare()
+            adapter = productsListAdapter
+        }
+
         presenter.subscribe(this)
-        presenter.loadProducts()
+        presenter.loadProducts(collection.id)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
@@ -65,12 +76,12 @@ class CollectionActivity : BaseActivity(), CollectionView {
 
     private fun hideProductLoader() {
         productsLoader.isVisible = false
-        productsLoader.isVisible = true
+        productsList.isVisible = true
     }
 
-    override fun showProducts(products: List<Unit>) {
+    override fun showProducts(products: List<Product>) {
         hideProductLoader()
 
-        // TODO
+        productsListAdapter.showProducts(products)
     }
 }

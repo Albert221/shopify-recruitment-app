@@ -4,7 +4,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_collections.*
 import wolszon.me.shopifydeveloperchallenge.R
 import wolszon.me.shopifydeveloperchallenge.android.base.BaseActivity
-import wolszon.me.shopifydeveloperchallenge.android.ui.collections.item.CollectionsListAdapter
+import wolszon.me.shopifydeveloperchallenge.android.ui.collections.list.CollectionsListAdapter
 import wolszon.me.shopifydeveloperchallenge.android.utils.MarginItemDecoration
 import wolszon.me.shopifydeveloperchallenge.android.utils.prepare
 import wolszon.me.shopifydeveloperchallenge.api.model.Collection

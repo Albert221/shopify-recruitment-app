@@ -87,7 +87,7 @@ data class ProductsResponse(
         @Json(name = "weight_unit")
         var weightUnit: String,
         @Json(name = "inventory_item_id")
-        var inventoryItemId: Int,
+        var inventoryItemId: Long,
         @Json(name = "inventory_quantity")
         var inventoryQuantity: Int,
         @Json(name = "old_inventory_quantity")
